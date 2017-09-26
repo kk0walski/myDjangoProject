@@ -122,6 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/karol/Dokumenty/myDjangoProject/mysite/static/'
+STATICFILES_DIRS = [
+    ('assets', '/home/karol/Dokumenty/myDjangoProject/mysite/blog/static'),
+]
 CKEDITOR_UPLOAD_PATH = '/uploads/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/home/karol/Dokumenty/myDjangoProject/mysite/media/'

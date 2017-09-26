@@ -1,18 +1,40 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>{% block title %}{% endblock %}</title>
-        <link href="{% static "css/blog.css" %}" rel="stylesheet">
-    </head>
-    <body>
-        <div id="content">
-            {% block content %}
-            {% endblock %}
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="blog-masthead">
+        <div class="container">
+            <nav class="nav">
+                <a class="nav-link active" href="#">Blog</a>
+            </nav>
         </div>
-        <div id="sidebar">
-            <h2>Mój blog</h2>
-            <p>To jest mój blog</p>
+    </div>
+    <div class="blog-header">
+        <div class="container">
+            <h1 class="blog-title">The Bootstrap Blog</h1>
+            <p class="lead blog-description">An example blog template built with Bootstrap.</p>
         </div>
-    </body>
+    </div>
+    <div id="container">
+        <div class="col-sm-8 blog-main">
+            {% block content %} {% endblock %}
+        </div>
+        <div class="col-sm-3 offset-sm-1 blog-sidebar">
+                <div class="sidebar-module sidebar-module-inset">
+                        <h4>About</h4>
+                        <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                </div>
+        </div>
+    </div>
+</body>
+
 </html>

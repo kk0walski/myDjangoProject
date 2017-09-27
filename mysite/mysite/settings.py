@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'blog',
     'ckeditor',
     'ckeditor_uploader',
+    'django_comments_xtd',
+    'django_comments'
 ]
 
 MIDDLEWARE = [
@@ -115,6 +118,19 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+SITE_ID = 2
+COMMENTS_APP = 'django_comments_xtd'
+COMMENTS_XTD_MAX_THREAD_LEVEL = 5
+COMMENTS_XTD_CONFIRM_EMAIL = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = "karol.kowalski95@gmail.com"
+EMAIL_HOST_PASSWORD = "karlik@02"
+DEFAULT_FROM_EMAIL = "Helpdesk <helpdesk@yourdomain>"
+EMAIL_USE_TLS = True
 
 
 # Static files (CSS, JavaScript, Images)

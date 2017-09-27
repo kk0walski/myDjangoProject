@@ -23,4 +23,18 @@
       &nbsp;&sdot;&nbsp;
       {{ comment_count }} comments have been posted.
     </div>
+    {% if comment_count %}
+    <hr/>
+    <div class="comments">
+      {% render_comment_list for post %}
+    </div>
+    {% endif %}
+    {% if post.allow_comments %}
+    <div class="comment">
+      <h4 class="text-center">Your comment</h4>
+      <div class="well">
+        {% render_comment_form for post %}
+      </div>
+    </div>
+    {% endif %}
 {% endblock content %}

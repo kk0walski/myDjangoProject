@@ -119,9 +119,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-SITE_ID = 2
+SITE_ID = 4
 COMMENTS_APP = 'django_comments_xtd'
-COMMENTS_XTD_MAX_THREAD_LEVEL = 5
+COMMENTS_XTD_MAX_THREAD_LEVEL = 3
 COMMENTS_XTD_CONFIRM_EMAIL = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

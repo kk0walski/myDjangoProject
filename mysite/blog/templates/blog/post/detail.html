@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% load comments %}
+{% load comments_xtd %}
 
 {% block  title %}{{ post.title }}{% endblock %}
 
@@ -23,12 +24,7 @@
       &nbsp;&sdot;&nbsp;
       {{ comment_count }} comments have been posted.
     </div>
-    {% if comment_count %}
-    <hr/>
-    <div class="comments">
-      {% render_comment_list for post %}
-    </div>
-    {% endif %}
+    
     {% if post.allow_comments %}
     <div class="comment">
       <h4 class="text-center">Your comment</h4>
@@ -36,5 +32,12 @@
         {% render_comment_form for post %}
       </div>
     </div>
+    {% endif %}
+    
+    {% if comment_count %}
+    <hr/>
+    <ul class="media-list">
+      {% render_xtdcomment_tree for post %}
+    </ul>
     {% endif %}
 {% endblock content %}

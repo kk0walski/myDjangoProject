@@ -3,6 +3,7 @@ from . import views
 from .views import TagIndexView, PostDetail
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import PostSitemap
+from .feeds import PostsFeed
 
 sitemaps = {
     'posts' : PostSitemap
@@ -19,4 +20,5 @@ urlpatterns = [
         name='post_detail'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps' : sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
+    url(r'^feed/$', PostsFeed(), name='post_feed')
 ]

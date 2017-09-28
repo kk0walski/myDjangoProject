@@ -14,6 +14,14 @@
             <p class="blog-post-meta">
                 Opublikowany {{ post.publish }} przez {{ post.author }}
             </p>
+            Tagi:
+            {% for tag in post.tags.all %}
+            <span class="tag tag-pill tag-default">
+                <a href="{% url 'blog:tagged' tag.slug %}" rel="tag">
+                    {{ tag.name }}
+                </a>
+            </span>
+            {% endfor %}
             {% autoescape off %}
                 {{ post.body|truncatewords:30|linebreaks }}
             {% endautoescape %}

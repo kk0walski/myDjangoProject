@@ -40,7 +40,7 @@
                         <h4>Tags</h4>
                         {% get_tagcloud as tags for 'blog' %}
                         {% for tag in tags %}
-                            <a href="#tag" rel="tag" class="tag{{ tag.num_times }}">{{ tag }}</a>
+                            <a href="{% url 'blog:tagged' tag.slug %}" rel="tag" class="tag{{ tag.num_times }}">{{ tag }}</a>
                         {% endfor %}
                 </div>
             </div>

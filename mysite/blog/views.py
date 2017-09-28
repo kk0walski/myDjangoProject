@@ -29,5 +29,6 @@ class TagIndexView(TagMixin, ListView):
     paginate_by = 3
     context_object_name = 'posts'
 
-    def get_querystet(self):
-        return Post.objects.filter(tags__slug=self.kwargs.get('slug'))
+    def get_queryset(self):
+        tag = self.kwargs.get('slug')
+        return Post.published.filter(tags__slug=self.kwargs.get('slug'))

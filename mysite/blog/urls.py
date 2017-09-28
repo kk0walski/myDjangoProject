@@ -1,6 +1,12 @@
 from django.conf.urls import url
 from . import views
 from .views import TagIndexView, PostDetail
+from django.contrib.sitemaps.views import sitemap
+from blog.sitemaps import PostSitemap
+
+sitemaps = {
+    'posts' : PostSitemap
+}
 
 urlpatterns = [
     # Widoki posta
@@ -11,4 +17,6 @@ urlpatterns = [
         r'(?P<slug>[-\w]+)/$',
         PostDetail.as_view(),
         name='post_detail'),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps' : sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'),
 ]

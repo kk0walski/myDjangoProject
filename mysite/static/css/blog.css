@@ -164,3 +164,12 @@
   .blog-footer p:last-child {
     margin-bottom: 0;
   }
+
+  .tag1 { color: #aaa; font-size: 12px; text-decoration: none;}
+  .tag2 { color: #9a9; font-size: 12px; text-decoration: none;}
+  .tag3 { color: #595; font-size: 14px; text-decoration: none;}
+  .tag4 { color: #585; font-size: 18px; text-decoration: none;}
+  .tag5 { color: #485; font-size: 20px; text-decoration: none;}
+  .tag6 { color: #465; font-size: 22px; text-decoration: none;}
+  .tag7 { color: #364; font-size: 25px; text-decoration: none;}
+  .tag8 { color: #354; font-size: 30px; text-decoration: none;}

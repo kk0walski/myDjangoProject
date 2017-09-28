@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'django_comments_xtd',
-    'django_comments'
+    'django_comments',
+    'taggit'
 ]
 
 MIDDLEWARE = [

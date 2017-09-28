@@ -133,6 +133,7 @@ EMAIL_HOST_USER = "karol.kowalski95@gmail.com"
 EMAIL_HOST_PASSWORD = "karlik@02"
 DEFAULT_FROM_EMAIL = "Helpdesk <helpdesk@yourdomain>"
 EMAIL_USE_TLS = True
+TAGGIT_TAGGCLOUD_MAX = 8.0
 
 
 # Static files (CSS, JavaScript, Images)

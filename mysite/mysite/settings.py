@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django_comments',
     'taggit',
     'taggit_templatetags2',
+    'taggit_labels',
 ]
 
 MIDDLEWARE = [

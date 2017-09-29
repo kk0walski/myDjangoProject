@@ -38,5 +38,5 @@ class TagIndexView(TagMixin, ListView):
 
 class PostSearch(SearchView):
     template_name = 'blog/post/search.html'
-    queryset = SearchQuerySet().all()
+    queryset = SearchQuerySet()
     form_class = MySearchForm

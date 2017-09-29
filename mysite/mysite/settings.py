@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'taggit',
     'taggit_templatetags2',
     'taggit_labels',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,13 @@ TEMPLATES = [
         },
     },
 ]
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+      'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+      'PATH': os.path.join(BASE_DIR, 'whoosh_index')
+    },
+  }
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 

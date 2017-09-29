@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Post
 from taggit.models import Tag
 from django.views.generic import ListView, DetailView
+from haystack.generic_views import SearchView
+from haystack.query import SearchQuerySet
+from .forms import MySearchForm
 
 class TagMixin(object):
     def get_context_data(self, **kwargs):
@@ -32,3 +35,8 @@ class TagIndexView(TagMixin, ListView):
     def get_queryset(self):
         tag = self.kwargs.get('slug')
         return Post.published.filter(tags__slug=self.kwargs.get('slug'))
+
+class PostSearch(SearchView):
+    template_name = 'blog/post/search.html'
+    queryset = SearchQuerySet()
+    form_class = MySearchForm

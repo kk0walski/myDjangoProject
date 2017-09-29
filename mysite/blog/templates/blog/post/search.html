@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% load highlight %}
+
+{% block title %}Szukaj{% endblock %}
+
+{% block content %}
+    <form type="get" action=".">
+        {{ form.as_p }}
+        <input type="submit" value="Szukaj">
+    </form>
+    
+{% endblock %}

@@ -1,4 +1,4 @@
-#!/home/karol/Dokumenty/myDjangoProject/my_env/bin/python3.5
+#!/home/karol/Dokumenty/myDjangoProject/my_env/bin/python3
 from __future__ import print_function
 import base64
 import os

@@ -1,4 +1,4 @@
-#!/home/karol/Dokumenty/myDjangoProject/my_env/bin/python3.5
+#!/home/karol/Dokumenty/myDjangoProject/my_env/bin/python3
 #
 # The Python Imaging Library.
 # $Id$

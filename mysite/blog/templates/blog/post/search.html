@@ -1,5 +1,4 @@
 {% extends "blog/base.html" %}
-{% load highlight %}
 
 {% block title %}Szukaj{% endblock %}
 
@@ -14,11 +13,27 @@
         {% if query %}
         <h3>Results</h3>
         {% for result in object_list %}
-        <p><a href="/project/{{result.get_stored_fields.project}}">{{result.get_stored_fields.project}}</a> : 
-            <a href="{{ result.object.get_absolute_url }}">{{ result.object.id }}</a> ({{result.verbose_name}})</p>
-        {% for text in result.highlighted.text %}
-        <blockquote>{% highlight text with query %}</blockquote>
-        {% endfor %}
+        <div class="blog-post">
+            <h2 class="blog-post-title">
+                <a href="{{ post.get_absolute_url }}">
+                    {{ result.object.title }}
+                </a>
+            </h2>
+            <p class="blog-post-meta">
+                Opublikowany {{ result.object.publish }} przez {{ result.object.author }}
+            </p>
+            Tagi:
+            {% for tag in result.object.tags.all %}
+            <span class="tag tag-pill tag-default">
+                <a href="{% url 'blog:tagged' tag.slug %}" rel="tag">
+                    {{ tag.name }}
+                </a>
+            </span>
+            {% endfor %}
+            {% autoescape off %}
+                {{ result.object.body|truncatewords:30|linebreaks }}
+            {% endautoescape %}
+        </div>
         {% empty %}
         <p>No results found.</p>
         {% endfor %}

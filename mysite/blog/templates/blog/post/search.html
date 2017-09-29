@@ -5,10 +5,23 @@
 
 {% block content %}
     <form type="get" action=".">
-        {{ form.as_p }}
-        <input type="submit" value="Szukaj">
-    </form>
-    {% if query %}
-        {% highlight object_list with query %}
-    {% endif %}
+        {{ form.as_table }}
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="Search"></td>
+          </tr>
+        </table>
+        {% if query %}
+        <h3>Results</h3>
+        {% for result in object_list %}
+        <p><a href="/project/{{result.get_stored_fields.project}}">{{result.get_stored_fields.project}}</a> : 
+            <a href="{{ result.object.get_absolute_url }}">{{ result.object.id }}</a> ({{result.verbose_name}})</p>
+        {% for text in result.highlighted.text %}
+        <blockquote>{% highlight text with query %}</blockquote>
+        {% endfor %}
+        {% empty %}
+        <p>No results found.</p>
+        {% endfor %}
+        {% endif %}
+        </form>
 {% endblock %}

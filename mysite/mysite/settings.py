@@ -149,6 +149,7 @@ TAGGIT_TAGGCLOUD_MAX = 8.0
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+HAYSTACK_CUSTOM_HIGHLIGHTER = '/home/karol/Dokumenty/myDjangoProject/mysite/blog/utils.py'
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/karol/Dokumenty/myDjangoProject/mysite/static/'
 STATICFILES_DIRS = [

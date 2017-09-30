@@ -40,3 +40,4 @@ class PostSearch(SearchView):
     template_name = 'blog/post/search.html'
     queryset = SearchQuerySet()
     form_class = MySearchForm
+    paginate_by = 3

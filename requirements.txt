@@ -7,6 +7,7 @@ django-comments-xtd==2.0.8
 django-contrib-comments==1.8.0
 django-crispy-forms==1.6.1
 django-fluent-comments==1.4.3
+django-haystack==2.6.1
 django-js-asset==0.1.1
 django-tag-parser==3.1
 django-tagging==0.4.5
@@ -15,13 +16,16 @@ django-taggit-labels==0.5.1
 django-taggit-templatetags==0.2.5
 django-taggit-templatetags2==1.6.1
 django-templatetag-sugar==1.0
+djangorestframework==3.6.4
 docutils==0.14
 idna==2.6
 olefile==0.44
 Pillow==4.2.1
+pkg-resources==0.0.0
 pysolr==3.6.0
 python-akismet==0.3.0
 pytz==2017.2
 requests==2.18.4
 six==1.11.0
 urllib3==1.22
+Whoosh==2.7.4

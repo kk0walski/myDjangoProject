@@ -4,13 +4,6 @@
 {% block title %}Szukaj{% endblock %}
 
 {% block content %}
-    <form type="get" action=".">
-        {{ form.as_table }}
-        <tr>
-            <td>&nbsp;</td>
-            <td><input type="submit" value="Search"></td>
-          </tr>
-        </table>
         {% if query %}
         <h3>Results</h3>
             {% for result in object_list %}
@@ -45,6 +38,15 @@
             <p>No results found.</p>
             {% endfor %}
             {% include "pagination.html" with page=page_obj %}
+        {% else %}
+        <form type="get" action=".">
+            {{ form.as_table }}
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Search"></td>
+              </tr>
+            </table>
+        </form>
         {% endif %}
         </form>
 {% endblock %}

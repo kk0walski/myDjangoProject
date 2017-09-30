@@ -9,7 +9,7 @@
             {% for result in object_list %}
             <div class="blog-post">
                 <h2 class="blog-post-title">
-                    <a href="{{ post.get_absolute_url }}">
+                    <a href="{{ result.object.get_absolute_url }}">
                         {{ result.object.title }}
                     </a>
                 </h2>
